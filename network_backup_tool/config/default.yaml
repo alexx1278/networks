@@ -1,0 +1,38 @@
+# Network Backup Tool - Default Configuration
+
+global:
+  username: "admin"
+  password: ""  # Leave empty to prompt or use key-based auth
+  port: 22
+  timeout: 30
+  use_keys: false
+  key_file: "~/.ssh/id_rsa"
+  transport: "ssh"
+
+backup:
+  backup_dir: "backups"
+  reports_dir: "reports"
+  logs_dir: "logs"
+  max_backups: 30
+  max_workers: 5
+  parallel_mode: true
+
+comparison:
+  context_lines: 3
+  ignore_patterns:
+    common:
+      - "^! Time:.*"
+      - "^! Last configuration change.*"
+      - "^! NVRAM config last updated.*"
+      - "^Building configuration.*"
+      - "^Current configuration :.*"
+      - "^## Last commit:.*"
+      - "^## .*"
+      - "^# .*"
+      - "^\s*$"
+    
+    cisco_ios:
+      - "^! Configuration register.*"
+    
+    juniper_junos:
+      - "^##.*"

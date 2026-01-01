@@ -1,0 +1,44 @@
+# Device Command Mappings
+# Each device type should have the following commands:
+# - hostname_cmd: Command to get device hostname
+# - config_cmd: Command to get configuration
+# - hostname_pattern: Regex pattern to extract hostname from output
+# - disable_paging: Command to disable paging (true/false or command string)
+# - enable_password: Whether enable password is required (true/false)
+
+cisco_ios:
+  hostname_cmd: "show running-config | include hostname"
+  config_cmd: "show running-config"
+  hostname_pattern: "hostname\s+(\S+)"
+  disable_paging: true
+  enable_password: true
+
+cisco_nxos:
+  hostname_cmd: "show running-config | include hostname"
+  config_cmd: "show running-config"
+  hostname_pattern: "hostname\s+(\S+)"
+  disable_paging: true
+
+juniper_junos:
+  hostname_cmd: "show configuration system host-name"
+  config_cmd: "show configuration | display set"
+  hostname_pattern: "host-name\s+(\S+);"
+  disable_paging: true
+
+huawei_vrp:
+  hostname_cmd: "display current-configuration | include sysname"
+  config_cmd: "display current-configuration"
+  hostname_pattern: "sysname\s+(\S+)"
+  disable_paging: "screen-length 0 temporary"
+
+arista_eos:
+  hostname_cmd: "show running-config | include hostname"
+  config_cmd: "show running-config"
+  hostname_pattern: "hostname\s+(\S+)"
+  disable_paging: true
+
+mikrotik_routeros:
+  hostname_cmd: "/system identity print"
+  config_cmd: "/export compact"
+  hostname_pattern: "name:\s+(\S+)"
+  disable_paging: true
