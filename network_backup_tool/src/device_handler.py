@@ -1,7 +1,6 @@
 """
 Network Device Handler
 """
-
 import re
 import socket
 import logging

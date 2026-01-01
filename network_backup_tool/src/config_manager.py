@@ -1,7 +1,6 @@
 """
 Configuration Manager
 """
-
 import json
 import yaml
 import logging

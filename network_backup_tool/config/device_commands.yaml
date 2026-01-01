@@ -42,3 +42,4 @@ mikrotik_routeros:
   config_cmd: "/export compact"
   hostname_pattern: "name:\s+(\S+)"
   disable_paging: true
+
