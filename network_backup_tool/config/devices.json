@@ -1,6 +1,6 @@
 [
   {
-    "host": "192.168.2.1",
+    "host": "192.168.12.178",
     "device_type": "cisco_ios",
     "username": "admin",
     "password": "cisco123",

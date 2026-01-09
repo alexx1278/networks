@@ -1,0 +1,5 @@
+paramiko>=3.0.0
+pyyaml>=6.0
+colorama>=0.4.6
+ipaddress>=1.0.23
+concurrent-log-handler>=0.9.24
