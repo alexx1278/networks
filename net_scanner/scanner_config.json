@@ -1,0 +1,19 @@
+{
+  "input_file": "ips.txt",
+  "output_file": "report.txt",
+  "log_file": "scanner.log",
+  "timeout": 2.0,
+  "ping_count": 1,
+  "ping_duration": 5,
+  "ping_interval": 0.5,
+  "concurrent_limit": 50,
+  "max_retries": 2,
+  "exclude_self": false,
+  "validate_ips": true,
+  "report_format": "text",
+  "log_level": "DEBUG",
+  "show_progress": true,
+  "progress_update_interval": 10,
+  "save_raw_results": false,
+  "raw_results_file": "raw_results.json"
+}
